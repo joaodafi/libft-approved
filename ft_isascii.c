@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/01 15:21:31 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/02 14:22:29 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/08/02 14:27:40 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/08/02 14:59:03 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_isascii(int c)
 {
-	if (ft_isdigit (c) || ft_isalpha (c))
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
