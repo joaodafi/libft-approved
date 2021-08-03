@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 11:03:35 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/03 15:25:02 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/08/03 15:34:55 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *str, size_t how_many)
 {
-	ft_memset(str, '0', how_many);
+	ft_memset(str, '\0', how_many);
 }
