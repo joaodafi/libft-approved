@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 11:03:35 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/04 18:03:07 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/08/04 14:35:21 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/08/04 17:50:35 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	ft_memset(str, '\0', n);
+	char		*destiny;
+	const char	*source;
+
+	if ((dest == src) || (n == 0))
+		return (dest);
+	destiny = (char *)dest;
+	source = (const char *)src;
+	if (source < destiny)
+	{
+		while (n--)
+		{
+			while (n--)
+				*(destiny + n) = *(source + n);
+			return (dest);
+		}
+	}
+	while (n--)
+		*destiny++ = *source++;
+	return (dest);
 }
