@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 11:58:20 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/13 16:22:38 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/08/13 14:49:54 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/08/13 16:20:02 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	cntr;
+	size_t			counter;
+	unsigned char	*p_s1;
+	unsigned char	*p_s2;
 
-	cntr = 0;
-	if (n == cntr)
+	counter = 0;
+	if (n == counter)
 		return (0);
-	while (cntr < n && s1[cntr] == s2[cntr] && s1[cntr] && s2[cntr])
-		cntr++;
-	return ((unsigned char)s1[cntr] - (unsigned char)s2[cntr]);
+	p_s1 = (unsigned char *)s1;
+	p_s2 = (unsigned char *)s2;
+	while (counter < n && p_s1[counter] == p_s2[counter])
+		counter++;
+	return (p_s1[counter] - p_s2[counter]);
 }
