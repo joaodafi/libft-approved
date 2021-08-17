@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 14:42:06 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/13 16:00:36 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:23:55 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include <stdlib.h>
 
-int		ft_isdigit(int c);
 int		ft_isalpha(int c);
+int		ft_isdigit(int c);
 int		ft_isalnum(int c);
-int		ft_isprint(int c);
 int		ft_isascii(int c);
+int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *str, size_t n);
@@ -35,5 +35,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+int		ft_atoi(const char *nptr);
 
 #endif

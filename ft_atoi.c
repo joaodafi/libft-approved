@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 11:58:20 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/14 12:00:37 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/08/14 12:44:22 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/08/14 14:25:32 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t	cntr;
+	int	ct;
+	int	nbr;
+	int	signal;
 
-	cntr = 0;
-	if (n == cntr)
-		return (0);
-	while (cntr < n && s1[cntr] == s2[cntr] && s1[cntr] && s2[cntr])
-		cntr++;
-	return ((unsigned char)s1[cntr] - (unsigned char)s2[cntr]);
+	ct = 0;
+	nbr = 0;
+	signal = 1;
+	while (nptr[ct] && (nptr[ct] == 32 || (nptr[ct] <= 14 && nptr[ct] >= 9)))
+		ct++;
+	if (nptr[ct] && nptr[ct] == '-')
+	{
+		signal = -1;
+		ct++;
+	}
+	else if (nptr[ct] == '+')
+		ct++;
+	while (nptr[ct] && ft_isdigit(nptr[ct]))
+		nbr = (nbr * 10) + (nptr[ct++] - '0');
+	return (nbr * signal);
 }
