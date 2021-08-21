@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 11:03:35 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/17 10:58:16 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/08/17 14:18:55 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/08/21 10:12:09 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t n)
+char	*ft_strdup(const char *s)
 {
-	ft_memset(str, '\0', n);
+	char	*ptr;
+
+	ptr = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!ptr)
+		return (NULL);
+	ptr = ft_memcpy (ptr, s, (ft_strlen(s) + 1));
+	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 11:45:28 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/09 12:14:56 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/08/17 14:29:29 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t	length;
 
 	if (!s)
 		return (0);
-	len = 0;
-	while (s[len])
-		len ++;
-	return (len);
+	length = 0;
+	while (s[length])
+		length ++;
+	return (length);
 }
