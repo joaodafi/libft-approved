@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 15:43:10 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/09/03 09:06:46 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/09/03 08:20:07 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/09/03 09:21:11 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char		*destiny;
-	const char	*source;
+	char	*pt;
+	size_t	ctr;
 
-	if ((dest == src) || (n == 0))
-		return (dest);
-	if (!dest && !src)
-		return (0);
-	destiny = (char *)dest;
-	source = (const char *)src;
-	while (n--)
-		*destiny++ = *source++;
-	return (dest);
+	if (!s)
+		return (NULL);
+	if ((size_t)start > ft_strlen(s))
+		return (NULL);
+	if ((size_t)start == ft_strlen(s))
+		return (ft_strdup(""));
+	pt = malloc (sizeof(char) * (len + 1));
+	if (!pt)
+		return (NULL);
+	ctr = 0;
+	while (ctr < len)
+	{
+		pt[ctr] = *(s + start + ctr);
+		ctr++;
+	}
+	pt[ctr] = '\0';
+	return (pt);
 }
