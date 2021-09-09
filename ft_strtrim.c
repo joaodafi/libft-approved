@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/03 09:12:34 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/09/07 14:53:47 by jomiguel         ###   ########.fr       */
+/*   Created: 2021/09/07 14:51:35 by jomiguel          #+#    #+#             */
+/*   Updated: 2021/09/07 16:03:21 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static int	check_set(char c, const char *set)
 {
+	while (*set)
+	{
+		if (c == *set++)
+			return (1);
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
 	char	*pt;
 
-	if (!s1 && !s2)
-		return (ft_strdup(""));
-	if (s1 && !s2)
-		return (ft_strdup(s1));
-	if (!s1 && s2)
-		return (ft_strdup(s2));
-	pt = malloc (sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
-	if (!pt)
+	if (!s1)
 		return (NULL);
-	ft_memmove (pt, s1, ft_strlen(s1));
-	ft_memmove ((pt + ft_strlen(s1)), s2, ft_strlen(s2));
-	pt[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	if (!set)
+		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1);
+	while (check_set(s1[start], set))
+		start++;
+	if (start == end)
+		return (NULL);
+	while (check_set(s1[end - 1], set))
+		end--;
+	pt = ft_substr(s1, start, end - start);
 	return (pt);
 }
