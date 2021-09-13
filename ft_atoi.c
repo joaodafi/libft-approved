@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 12:44:22 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/14 14:25:32 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/13 17:19:10 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	ct;
-	int	nbr;
+	long	ct;
+	long	nbr;
 	int	signal;
 
 	ct = 0;
