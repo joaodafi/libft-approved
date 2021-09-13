@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 13:47:19 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/10 11:54:57 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/13 20:32:58 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + ft_strlen (src));
 	else
 	{
-		while (src[counter] && (dst_len + counter) < size)
-			dst[ft_strlen (dst)] = src[counter++];
-		if ((dst_len + counter) == size)
-			dst[dst_len + counter - 1] = '\0';
-		else
-			dst[dst_len + counter] = '\0';
+		while (src[counter] && (dst_len + counter + 1) < size)
+		{
+			dst[dst_len + counter] = src[counter];
+			counter++;
+		}
+		dst[dst_len + counter] = '\0';
 		return (dst_len + ft_strlen (src));
 	}
 }
