@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 11:33:32 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:26:41 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/10 15:24:43 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= ' ' && c <= '~')
-		return (1);
-	return (0);
+	return (c >= ' ' && c <= '~');
 }

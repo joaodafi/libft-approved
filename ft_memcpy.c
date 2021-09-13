@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 15:43:10 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/09/03 09:06:46 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:05:22 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	if ((dest == src) || (n == 0))
 		return (dest);
-	if (!dest && !src)
-		return (0);
+	if (!src || (!dest && !src))
+		return (NULL);
 	destiny = (char *)dest;
 	source = (const char *)src;
-	while (n--)
+	while (n-- && source)
 		*destiny++ = *source++;
 	return (dest);
 }

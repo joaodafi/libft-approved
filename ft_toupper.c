@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 16:37:50 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/10 18:51:11 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:23:14 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c > 96 && c < 123)
 		return (c - 32);
 	else
 		return (c);

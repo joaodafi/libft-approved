@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 18:50:25 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/08/10 20:47:56 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/13 14:42:19 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	counter = 0;
 	while (counter <= ft_strlen(s))
 	{
-		if (s[counter] == c)
+		if (s[counter] == (unsigned char)c)
 			return ((char *)s + counter);
 		counter++;
 	}
