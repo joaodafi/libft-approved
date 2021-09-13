@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 15:21:05 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/09/13 16:10:27 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/13 17:26:12 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char	cc;
-	cc = (unsigned char)c;
 	return (c >= '0' && c <= '9');
 }
