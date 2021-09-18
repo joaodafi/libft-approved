@@ -6,7 +6,7 @@
 #    By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/10 16:02:43 by jomiguel          #+#    #+#              #
-#    Updated: 2021/09/13 17:00:50 by jomiguel         ###   ########.fr        #
+#    Updated: 2021/09/18 09:23:14 by jomiguel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,10 +61,6 @@ CFLAGS = -Wall -Werror -Wextra
 ${NAME}:	${OBJS}
 	ar rc ${NAME} ${OBJS}
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SCRS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
 all:	${NAME}
 
 clean:
@@ -74,3 +70,5 @@ fclean:	clean
 	${RM} ${NAME}
 
 re:	fclean all
+
+.PHONY 
