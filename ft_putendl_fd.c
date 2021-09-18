@@ -6,7 +6,7 @@
 /*   By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 15:07:32 by jomiguel          #+#    #+#             */
-/*   Updated: 2021/09/18 09:32:07 by jomiguel         ###   ########.fr       */
+/*   Updated: 2021/09/18 09:36:08 by jomiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
 	while (*s)
 		write (fd, s++, 1);
 	write(fd, "\n", 1);
