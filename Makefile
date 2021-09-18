@@ -6,7 +6,7 @@
 #    By: jomiguel < jomiguel@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/10 16:02:43 by jomiguel          #+#    #+#              #
-#    Updated: 2021/09/18 09:23:14 by jomiguel         ###   ########.fr        #
+#    Updated: 2021/09/18 09:39:38 by jomiguel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,4 +71,4 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY 
+.PHONY: all clean fclean re
