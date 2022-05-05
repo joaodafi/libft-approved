@@ -1,7 +1,7 @@
 # my LIBFT as it was approved by Moulinette
 this project was approver in 2021-09-20, subject probably changed a bit since then.
 
-to see my libft as it is currently, **go here!**
+to see my libft as it is currently, [**go here!**](https://github.com/joaodafi/libft)
 
 ---
 
